@@ -1,0 +1,57 @@
+@import "./normalize.css";
+
+/* :root->获取根元素html
+css 定义变量的方式-- + color-text等等 两个前杠
+定义好变量*/
+
+:root{
+    --color-text:#666;
+    --color-high-text:#ff5777;
+    --color-tint:#ff8198;
+    --color-background:#fff;
+    --font-size:14px;
+    --line-height:1.5;
+}
+*,
+*::before,
+*::after{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:"Helvetica Neue";
+    user-select:none;  /*禁止用户鼠标在页面上选中文字图片等*/;
+    -webkit-tap-highlight-color: transparent;
+    /* 苹果浏览器引擎,tap点击，hightligh北京高亮，ccolor颜色。颜色用数值tiaojie*/
+    
+    background: var(--color-background);
+    color:var(--color-text);
+    /* rem vw/vh */
+    width: 100vw;
+}
+
+.clear-fix::after{
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height:0;
+    visibility: hidden;
+}
+
+.clear-fix{
+    zoom: 1;
+}
+
+/*原理：通过CSS伪元素在容器的内部元素之后添加一个看不见的空格“/20”或点“.” ，并且设置clear属性清除浮动。
+优点：浏览器支持较好
+缺点：clearfix这个class需要添加zoom: 1（触发haslayout），才能支持IE6和IE7浏览器
+建议：推荐使用，设置公共类，减少CSS代码*/
+.left{
+    float:left;
+}
+.right{
+    float: right;
+}
