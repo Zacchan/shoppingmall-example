@@ -1,0 +1,13 @@
+export const ADD_COUNTER = 'add_counter';
+export const ADD_TO_CART = 'add_to_cart';
+export const GET_CART_LIST="get_cart_list";
+export const GET_CART_LIST_ITEM ="get_cart_list_item";
+export const ADD_TO_SELECTED_CART ="add_to_selected_cart";
+export const GET_SEL_CART_LIST = "get_sel_cart_list";
+export const GET_ACCOUNT ="get_account";
+export const CAL_ACCOUNT ="cal_account";
+export const DELETE_FROM_SELECTED_CART="delete_from_selected_cart";
+export const ADD_ALL_TO_CART = "add_all_to_cart";
+export const DELETE_ALL_FROM_CART = "delete_all_from_cart";
+export const DELETE_ALL_FROM_FAKE_CART="delete_all_from_fake_cart";
+export const GET_SEL_CART_LIST_LENGH ="get_sel_cart_list_length";

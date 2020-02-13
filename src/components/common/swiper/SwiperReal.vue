@@ -4,9 +4,9 @@
         <div class="all-slide" @touchstart=touchStart @touchmove="touchMove" @touchend="touchEnd">
             <slot></slot>
         </div>
+        
         <div class="indicator">
             <div v-for="(item,index) in slideCount"  :key ="index" class="indi-item" :class="{active:index===currentIndex-1}"> </div>
-      
         </div>
     </div>
     
@@ -49,7 +49,7 @@ export default {
             //开启定时器 用于图片轮播
             this.startTimer();
 
-        },100)
+        },400)   //这个秒数要设置的久一点 不然 可能 那个图片的数量获取的是0
     },
     methods:{
         touchStart(event){
@@ -131,14 +131,20 @@ export default {
 
         handleDom(){
             // let swiperEl = document.getElementsByClassName['all-slide']
-            let swiperEl = document.querySelector('.all-slide');
-            let slidesEl = swiperEl.getElementsByClassName('slide');
-
-            console.log(swiperEl.style);
+            let swiperEl;
+            let slidesEl;
+            
+             swiperEl = document.getElementsByClassName('all-slide')[0];
+             slidesEl = swiperEl.getElementsByClassName('slide');
+           
+            //console.log(swiperEl.style);
             //保存数量 4个
             this.slideCount = slidesEl.length;
+            
 
-            console.log(this.slideCount )
+           // console.log(this.slideCount);
+            
+            // console.log(this.slideCount )
             //如果count>1个 在前后分别添加一个slide
 
             if(this.slideCount>1){        
@@ -157,7 +163,7 @@ export default {
 
             //调用一个移动的方程
             this.setTransform(-this.currentIndex*this.swiperWidth);
-            console.log(-this.currentIndex*this.swiperWidth)
+           // console.log(-this.currentIndex*this.swiperWidth)
             
         },
 

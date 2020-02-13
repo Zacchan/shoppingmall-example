@@ -22,7 +22,9 @@
       <img slot="item-icon" name="item-icon" src="~assets/img/tabbar/cart.png" alt="">
        <img slot="item-icon-active" name="item-icon" src="~assets/img/tabbar/cart_active.png" alt="">
        <div slot="item-text">购物车</div>
+         
      </tab-bar-item>
+   <div class="cart-length" v-show="cartTopLength">{{cartTopLength}}</div>     
    </tab-bar>
   </div>
 </template>
@@ -35,13 +37,33 @@ export default {
    components:{
      TabBar,
      TabBarItem
+   },
+   computed:{
+     cartTopLength(){
+       return this.$store.state.cartList.length;
+     }
    }
 }
 </script>
 
 
 
-<style>
+<style scoped>
+
+.cart-length{
+  position:absolute;
+  right:1.6rem;
+  top:0px;
+  width:.9rem;
+  font-size: .8rem;
+  height: .9rem;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  line-height: .9rem;
+  background: red;
+
+}
 
 </style>
 

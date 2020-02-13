@@ -48,7 +48,7 @@ export default {
             // console.log(('.'+this.$route.path).indexOf(this.path));          
             if('.'+this.$route.path!=this.path)
                 {   
-             this.$router.replace(this.path);                                   
+                    this.$router.replace(this.path);                                   
                 }    
         }
     }

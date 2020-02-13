@@ -35,6 +35,7 @@ export default {
 .tab-control{
     display: flex;
     justify-content: space-around;
+    margin-bottom: 2px;
   
 }
 .tab-control-item{
@@ -43,6 +44,7 @@ export default {
     line-height: 35px;
     font-size:15px;
     padding:0 6px;
+   
 }
 .tab-control-item.active{
    color: var(--color-high-text);

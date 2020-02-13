@@ -44,7 +44,7 @@
 		  return {
         slideCount: 0, // 元素个数
         totalWidth: 0, // swiper的宽度
-        swiperStyle: {}, // swiper样式
+       swiperStyle: {}, // swiper样式
         currentIndex: 1, // 当前的index
         scrolling: false, // 是否正在滚动
       }
@@ -97,7 +97,7 @@
       checkPosition: function () {
         window.setTimeout(() => {
           // 1.校验正确的位置
-         this.swiperStyle.transition = '0ms';
+         this.swiperStyle.trantition = '0ms';
           if (this.currentIndex >= this.slideCount + 1) {
             this.currentIndex = 1;
             this.setTransform(-this.currentIndex * this.totalWidth);
